@@ -20,7 +20,7 @@ public class MuzzleHeat : MonoBehaviour
     {
 	if (usesMuzzleHeat)
 	{
-			muzzleMaterial.SetColor("_EmissionColor", muzzleMaterial.GetColor("_EmissionColor") - new Color(0, 0, 0));		
+		muzzleMaterial.SetColor("_EmissionColor", muzzleMaterial.GetColor("_EmissionColor") - new Color(0, 0, 0));		
 	}
     } 
      
