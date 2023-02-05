@@ -17,12 +17,12 @@ public class MuzzleHeat : MonoBehaviour
      
     // Reset when weapon is selected
     private void OnEnable()
+    {
+	if (usesMuzzleHeat)
 	{
-		if (usesMuzzleHeat)
-		{
-			muzzleMaterial.SetColor("_EmissionColor", muzzleMaterial.GetColor("_EmissionColor") - new Color(0, 0, 0));
-		}
-	} 
+			muzzleMaterial.SetColor("_EmissionColor", muzzleMaterial.GetColor("_EmissionColor") - new Color(0, 0, 0));		
+	}
+    } 
      
     private void Update()
     {
