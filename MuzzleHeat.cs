@@ -14,8 +14,17 @@ public class MuzzleHeat : MonoBehaviour
     private bool usesMuzzleHeat = true;
     // private variable to check if the muzzle is cooling down
     private bool coolingDown;
-
-    void Update()
+     
+    // Reset when weapon is selected
+    private void OnEnable()
+	{
+		if (usesMuzzleHeat)
+		{
+			muzzleMaterial.SetColor("_EmissionColor", muzzleMaterial.GetColor("_EmissionColor") - new Color(0, 0, 0));
+		}
+	} 
+     
+    private void Update()
     {
         // Check if fire key is pressed
         if (Input.GetKey(fire))
@@ -51,7 +60,7 @@ public class MuzzleHeat : MonoBehaviour
     }
 
     // Function to fire
-    void Fire()
+    private void Fire()
     {
         // code to fire goes here
     }
